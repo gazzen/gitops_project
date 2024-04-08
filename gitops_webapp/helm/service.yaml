@@ -1,0 +1,12 @@
+# helm/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitops_webapp
+spec:
+  selector:
+    app: gitops_webapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000

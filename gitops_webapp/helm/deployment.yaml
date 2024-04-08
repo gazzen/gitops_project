@@ -1,0 +1,20 @@
+# helm/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops_webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gitops_webapp
+  template:
+    metadata:
+      labels:
+        app: gitops_webapp
+    spec:
+      containers:
+        - name: gitops_webapp
+          image: your-dockerhub-username/gitops_webapp:latest
+          ports:
+            - containerPort: 8000
